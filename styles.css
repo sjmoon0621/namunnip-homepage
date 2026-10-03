@@ -213,6 +213,7 @@ ul, ol { list-style: none; }
 }
 .panel + .panel { box-shadow: 0 -24px 60px rgba(0,0,0,.12); }
 .panel--paper { background: var(--white); color: var(--ink); }
+.panel--sprout { background: var(--sprout); color: var(--ink); }
 .panel--leaf  { background: var(--forest); color: var(--white); }
 .panel--ink   { background: var(--ink); color: var(--white); }
 
@@ -254,6 +255,7 @@ ul, ol { list-style: none; }
   font-family: var(--f-en); font-size: 13px; letter-spacing: .16em; text-transform: uppercase; opacity: .6;
 }
 .visual--one   { background: var(--paper); color: var(--ink); }
+.visual--connect { background: var(--white); color: var(--ink); }
 .visual--two   { background: var(--leaf); color: var(--white); }
 .visual--three { background: #2e2e32; color: var(--leaf); --leaf-fill: var(--leaf); }
 .visual--three svg { color: transparent; }
@@ -357,6 +359,13 @@ ul, ol { list-style: none; }
   .steps li::before { top: 30px; left: -5px; }
   .versus-head { display: none; }
   .versus-row { grid-template-columns: 1fr; gap: 6px; }
+}
+
+/* 화면 높이가 낮은 노트북: 카드 내용이 한 화면에 들어오도록 */
+@media (min-width: 1101px) and (max-height: 820px) {
+  .panel-inner { padding-top: calc(var(--header-h) + 16px); padding-bottom: 40px; }
+  .items { margin-top: 32px; }
+  .items li { padding: 15px 0; }
 }
 
 /* ───────── Mobile refinements ───────── */
