@@ -386,8 +386,9 @@ ul, ol { list-style: none; }
   /* 사업 패널 */
   .business { padding-top: 16px; }
   .business-head { padding-bottom: 48px; }
-  .panel + .panel { box-shadow: none; }
-  .panel-inner { padding: 20px var(--pad) 48px; gap: 28px; }
+  /* 다음 카드가 둥근 모서리만큼 앞 카드 위로 겹쳐 올라가, 모서리 뒤로 배경이 비치지 않게 */
+  .panel + .panel { box-shadow: none; margin-top: -20px; }
+  .panel-inner { padding: 20px var(--pad) 68px; gap: 28px; }
   .panel-visual { height: 132px; border-radius: 14px; }
   .panel-visual figcaption { left: 18px; bottom: 14px; font-size: 11px; }
   .panel-title { margin-top: 12px; }
