@@ -256,7 +256,6 @@ ul, ol { list-style: none; }
 .visual--one   { background: var(--paper); color: var(--ink); }
 .visual--two   { background: var(--leaf); color: var(--white); }
 .visual--three { background: #2e2e32; color: var(--leaf); --leaf-fill: var(--leaf); }
-.visual--three svg { color: transparent; }
 
 /* ───────── Method ───────── */
 .method { position: relative; z-index: 1; background: var(--paper); padding: clamp(100px, 14vw, 200px) 0; }
