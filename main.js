@@ -23,6 +23,22 @@
   }), { threshold: 0.15 });
   document.querySelectorAll(".reveal").forEach(el => io.observe(el));
 
+  /* 사업 카드 쌓기: 카드가 화면보다 길면 카드 끝까지 읽은 뒤에 고정되도록 top을 음수로 */
+  const panels = document.querySelectorAll(".panel");
+  const pinPanels = () => {
+    // 카드가 이미 헤더 높이만큼 위 여백을 갖고 있으면(PC) 0, 아니면(모바일) 헤더 바로 아래에서 고정
+    const headerH = header.offsetHeight;
+    panels.forEach(p => {
+      const pad = parseFloat(getComputedStyle(p.querySelector(".panel-inner")).paddingTop);
+      const want = pad >= headerH ? 0 : headerH;
+      p.style.top = Math.min(want, window.innerHeight - p.offsetHeight) + "px";
+    });
+  };
+  pinPanels();
+  addEventListener("resize", pinPanels);
+  addEventListener("load", pinPanels);
+  if (document.fonts) document.fonts.ready.then(pinPanels);
+
   /* 히어로: 심볼 조각들이 깔린 들판에서, 잎이 하나씩 초록으로 자라난다 */
   const field = document.getElementById("field");
   const VIEW = ["627 324.8 144 144", "782.4 324.8 144 144", "627 480 144 144", "782.4 480 144 144"]; // ㄴ ㅁ ㅇ 잎

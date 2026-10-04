@@ -349,7 +349,7 @@ ul, ol { list-style: none; }
   .menu-open .menu-btn span:last-child { transform: translateY(-4.25px) rotate(-45deg); }
 
   .scroll-cue { display: none; }
-  .panel { position: relative; min-height: auto; border-radius: 20px 20px 0 0; }
+  .panel { min-height: auto; border-radius: 20px 20px 0 0; }  /* sticky 유지: top 값은 main.js가 카드 높이에 맞춰 계산 */
   .items li { grid-template-columns: 1fr; gap: 4px; }
   .steps { grid-template-columns: 1fr; row-gap: 0; }
   .steps li { padding: 24px 0 28px 28px; border-top: 0; border-left: 1px solid var(--ink); }
@@ -387,8 +387,8 @@ ul, ol { list-style: none; }
   .business { padding-top: 16px; }
   .business-head { padding-bottom: 48px; }
   /* 다음 카드가 둥근 모서리만큼 앞 카드 위로 겹쳐 올라가, 모서리 뒤로 배경이 비치지 않게 */
-  .panel + .panel { box-shadow: none; margin-top: -20px; }
-  .panel-inner { padding: 20px var(--pad) 68px; gap: 28px; }
+  .panel + .panel { box-shadow: 0 -12px 32px rgba(0,0,0,.14); }
+  .panel-inner { padding: 20px var(--pad) 48px; gap: 28px; }
   .panel-visual { height: 132px; border-radius: 14px; }
   .panel-visual figcaption { left: 18px; bottom: 14px; font-size: 11px; }
   .panel-title { margin-top: 12px; }
